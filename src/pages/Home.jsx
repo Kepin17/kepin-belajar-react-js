@@ -5,23 +5,24 @@ import postData from "../posts.json";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const [totalPost, setTotalPost] = useState(0);
 
   const onSearchHandler = (value) => {
     console.log(value);
-    const filteredPost = postData.filter((item) => item.title.includes(value));
+    const filteredPost = postData.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()));
     setPosts(filteredPost);
+    setTotalPost(filteredPost.length);
   };
 
   return (
     <div>
       <h1>Simple Blog</h1>
 
-      <Search onSearchHandler={onSearchHandler} />
-
+      <Search onSearchHandler={onSearchHandler} totalPost={totalPost} />
       <br />
 
-      {posts.map(({ title, slug, tags, author, date }) => (
-        <Article {...{ title, slug, tags, author, date }} key={title} />
+      {posts.map(({ title, slug, tags, author, date, isNow }) => (
+        <Article {...{ title, slug, tags, author, date, isNow }} key={title} />
       ))}
     </div>
   );

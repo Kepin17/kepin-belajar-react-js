@@ -1,7 +1,5 @@
-import PropTypes from "prop-types";
-
 const Article = (props) => {
-  const { title, slug, tag, author, date } = props;
+  const { title, slug, tag, author, date, isNow } = props;
   return (
     <div className="article">
       <h3>{title}</h3>
@@ -9,19 +7,12 @@ const Article = (props) => {
       <p>{tag}</p>
       <p>{author}</p>
       <p>{date}</p>
+      <small>{isNow ? "New" : "Not New"}</small>
       <hr />
       <br />
       <br />
     </div>
   );
-};
-
-Article.propTypes = {
-  title: PropTypes.arrayOf(PropTypes.string).isRequired,
-  slug: PropTypes.arrayOf(PropTypes.string).isRequired,
-  tag: PropTypes.arrayOf(PropTypes.string).isRequired,
-  author: PropTypes.arrayOf(PropTypes.string).isRequired,
-  date: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Article;

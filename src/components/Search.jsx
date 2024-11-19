@@ -11,7 +11,9 @@ const Search = (props) => {
   return (
     <div>
       cari article : <input type="text" placeholder="cari article" value={search} onChange={onSearchHandler} />
-      <p>ditemukan 0 untuk pencarian {search}</p>
+      <p>
+        ditemukan {props.totalPost} untuk pencarian {search}
+      </p>
     </div>
   );
 };
