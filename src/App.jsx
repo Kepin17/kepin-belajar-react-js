@@ -1,10 +1,12 @@
-import Article from "../components/Article";
 import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <Article name="Kepin" title={["Belajar", "React", "JSX"]} />
+      <div className="app">
+        <Home />
+      </div>
     </>
   );
 }

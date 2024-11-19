@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Belajar React",
+    "slug": "belajar-react",
+    "tags": ["react", "frontend"],
+    "author": "kepin",
+    "date": "2023-01-01"
+  },
+  {
+    "title": "Belajar CSS",
+    "slug": "belajar-css",
+    "tags": ["css", "frontend"],
+    "author": "kepin",
+    "date": "2023-01-01"
+  },
+  {
+    "title": "Belajar Mencintainya",
+    "slug": "belajar-mencintainya",
+    "tags": ["bucin", "frontend bucin"],
+    "author": "kepin",
+    "date": "2023-01-01"
+  }
+]
