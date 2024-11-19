@@ -1,16 +1,17 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+
 const Search = (props) => {
   const [search, setSearch] = useState("");
 
   const onSearchHandler = (event) => {
     setSearch(event.target.value);
-    props.onSearchHandler(event.target.value);
   };
 
   return (
     <div>
-      cari article : <input type="text" placeholder="cari article" value={search} onChange={onSearchHandler} />
+      cari article : <input type="text" placeholder="cari article" value={props.value} onChange={onSearchHandler} />
+      <button onClick={() => props.onSearchHandler(search)}>Search</button>
       <p>
         ditemukan {props.totalPost} untuk pencarian {search}
       </p>
