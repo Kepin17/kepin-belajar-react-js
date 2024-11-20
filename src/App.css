@@ -9,7 +9,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #0d0228;
-  color: #fff;
+  height: auto;
+  background: #ffffff;
+  color: #020202;
+}
+
+.article {
+  width: 600px;
+  height: auto;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #020202;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #020202;
+  color: #ffffff;
+  margin-top: 20px;
 }

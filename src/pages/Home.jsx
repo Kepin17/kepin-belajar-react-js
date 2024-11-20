@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Article from "../components/Article";
 import Search from "../components/Search";
-import postData from "../posts.json";
-
 const Home = () => {
-  const [posts, setPosts] = useState(postData);
+  const [posts, setPosts] = useState([]);
+  const [searchPost, setSearchPost] = useState([]);
   const [totalPost, setTotalPost] = useState(0);
 
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((data) => setPosts(data));
+  });
+
   const onSearchHandler = (value) => {
-    setPosts(postData);
-    const filteredPost = postData.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()));
-    setPosts(filteredPost);
+    const filteredPost = posts.filter((item) => item.title.toLowerCase().includes(value.toLowerCase()));
+    setSearchPost(filteredPost);
     setTotalPost(filteredPost.length);
   };
 
@@ -21,9 +25,7 @@ const Home = () => {
       <Search onSearchHandler={onSearchHandler} totalPost={totalPost} />
       <br />
 
-      {posts.map(({ title, slug, tags, author, date, isNow }, index) => (
-        <Article {...{ title, slug, tags, author, date, isNow }} key={index} />
-      ))}
+      {searchPost.lenght !== 0 && searchPost.map(({ title, body }, index) => <Article {...{ title, body }} key={index} />)}
     </div>
   );
 };
