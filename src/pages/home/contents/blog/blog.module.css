@@ -1,0 +1,76 @@
+.blogSection {
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+.blogSection h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.searchWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.searchBox {
+    width: min(600px, 90%);
+    position: relative;
+}
+
+.searchBox input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 50px;
+    border: none;
+    background: #f5f5f5;
+    padding-left: 3rem;
+    font-size: 1rem;
+}
+
+.searchBox input:focus {
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchBox svg {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.postWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .postWrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blogSection {
+        padding: 2rem 1rem;
+    }
+    
+    .postWrapper {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+}

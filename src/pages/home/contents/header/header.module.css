@@ -1,0 +1,72 @@
+.header {
+    width: 100%;
+    height: clamp(100px, 100vh, 600px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftContent {
+    padding: 10rem 2rem;
+}
+
+.leftContent, .rightContent {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightContent .cardContent {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+} 
+
+.rightContent .cardContent img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.rightContent .cardContent .infoBox{
+ width: 6rem;
+ height: 4rem;
+ position: absolute;
+ top: -2rem;
+ left: -1rem;
+ border-radius: 10px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background: #fff;
+ box-shadow: 0 2px 4px rgba(128, 128, 128, 0.3);
+ padding: .5rem;
+ font-size: .9rem;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.rightContent .cardContent .infoBox:nth-child(3) {
+    left: unset;
+    right: -1rem;
+    top: unset;
+    bottom: -1rem
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .leftContent, .rightContent {
+        width: 100%;
+    }
+}
